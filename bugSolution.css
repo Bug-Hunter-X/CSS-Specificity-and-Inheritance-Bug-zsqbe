@@ -1,0 +1,17 @@
+The solution addresses the specificity issue by ensuring that the style for `div p` has higher specificity than the styles for `div` and `p`:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green !important; /* Use !important to ensure the rule overrides all others */
+}
+```
+
+Using `!important` is generally discouraged for maintainability reasons, but it provides a clear demonstration for achieving the desired override in this specific case.  A better solution might involve restructuring the CSS to ensure higher specificity without `!important`, for instance, by using more specific selectors if possible.
